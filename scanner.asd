@@ -1,4 +1,4 @@
-(defsystem :rephrase2
+(defsystem :scanner
   :depends-on (:loops :alexandria)
   :around-compile (lambda (next)
                     (proclaim '(optimize (debug 3)
