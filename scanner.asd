@@ -8,15 +8,15 @@
   :components ((:module "source"
                         :pathname "./"
                         :components ((:file "package")
-                                     (:file "rephrase" :depends-on ("package"))
-                                     (:file "tokenizer" :depends-on ("rephrase"))
-                                     (:file "comments" :depends-on ("rephrase"))
-                                     (:file "spaces" :depends-on ("rephrase"))
-                                     (:file "strings" :depends-on ("rephrase"))
-                                     (:file "symbols" :depends-on ("rephrase"))
-                                     (:file "integers" :depends-on ("rephrase"))
+                                     (:file "decls" :depends-on ("package"))
+                                     (:file "tokenizer" :depends-on ("decls"))
+                                     (:file "comments" :depends-on ("decls"))
+                                     (:file "spaces" :depends-on ("decls"))
+                                     (:file "strings" :depends-on ("decls"))
+                                     (:file "symbols" :depends-on ("decls"))
+                                     (:file "integers" :depends-on ("decls"))
 				     
-				     (:file "scanner" :depends-on ("rephrase" 
+				     (:file "scanner" :depends-on ("package" "decls"
 								   "tokenizer"
 								   "spaces"
 								   "strings"

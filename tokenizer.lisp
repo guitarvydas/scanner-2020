@@ -1,6 +1,6 @@
-(in-package :rephrase)
+(in-package :scanner)
 
-(defclass tokenizer (rephrase)
+(defclass tokenizer (scanner)
   ((nline :accessor nline)
    (nposition :accessor nposition)
    (state :accessor state)

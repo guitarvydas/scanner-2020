@@ -1,6 +1,6 @@
-(in-package :rephrase)
+(in-package :scanner)
 
-(defclass integers (rephrase)
+(defclass integers (scanner)
   ((state :accessor state)
    (chars :accessor chars)
    (line :accessor line)

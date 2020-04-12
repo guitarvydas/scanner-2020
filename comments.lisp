@@ -1,9 +1,9 @@
-(in-package :rephrase)
+(in-package :scanner)
 
 ;; comments to end of line, begin with %
 (defconstant +comment-char+ #\%)
 
-(defclass comments (rephrase)
+(defclass comments (scanner)
   ((state :accessor state)
    (chars :accessor chars)
    (line :accessor line)

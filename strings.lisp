@@ -1,8 +1,8 @@
-(in-package :rephrase)
+(in-package :scanner)
 
 ;; strings - ignore escapes for now
 
-(defclass strings (rephrase)
+(defclass strings (scanner)
   ((state :accessor state)
    (chars :accessor chars)
    (line :accessor line)

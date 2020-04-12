@@ -1,7 +1,6 @@
-(defpackage :rephrase
+(defpackage :scanner
   (:use :cl)
   (:export
-   #:rephrase
    #:token
    #:make-token
    #:token-kind

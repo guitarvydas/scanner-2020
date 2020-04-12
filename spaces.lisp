@@ -1,9 +1,9 @@
-(In-package :rephrase)
+(In-package :scanner)
 
 ;; spaces to end of line, begin with %
 (defconstant +comment-char+ #\%)
 
-(defclass spaces (rephrase)
+(defclass spaces (scanner)
   ((state :accessor state)
    (chars :accessor chars)
    (line :accessor line)

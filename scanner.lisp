@@ -1,4 +1,4 @@
-(in-package :rephrase)
+(in-package :scanner)
 
 (defun scanner (str)
   (let ((tokenizer (make-instance 'tokenizer))
