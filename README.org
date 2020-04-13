@@ -1,5 +1,5 @@
 * intro
-  Rephrase: scanner pipeline consisting of: tokenizer | comments | strings |  spaces | symbols | integers
+  scanner pipeline consisting of: tokenizer | comments | strings |  spaces | symbols | integers
   see token.lisp for token struct passed down the pipeline
   rp
 * build
