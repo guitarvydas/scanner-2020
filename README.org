@@ -1,11 +1,15 @@
 * intro
   scanner pipeline consisting of: tokenizer | comments | strings |  spaces | symbols | integers
   see token.lisp for token struct passed down the pipeline
-  rp
 * build
 #+name: scanner
 #+begin_src lisp :results output
  (ql:quickload :scanner)
+#+end_src
+
+#+name: scanner
+#+begin_src lisp :results output
+ (ql:quickload :scanner/use)
 #+end_src
 
 #+name: scanner
