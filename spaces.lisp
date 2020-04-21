@@ -20,6 +20,7 @@
 	   (and (eq :character (token-kind tok))
 		(or (char= #\Space (token-text tok))
 		    (char= #\Newline (token-text tok))
+		    (char= #\Tab (token-text tok))
 		    (char= #\; (token-text tok))
 		    (char= #\, (token-text tok)))))
 	 (make-comment-token ()
