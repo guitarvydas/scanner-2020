@@ -17,15 +17,14 @@
 	   (and (eq :character (token-kind tok))
 		(or (and (char<= #\A (token-text tok)) (char>= #\Z (token-text tok)))
 		    (and (char<= #\a (token-text tok)) (char>= #\z (token-text tok)))
-		    (char= #\# (token-text tok)))))
+		    (char= #\$ (token-text tok)))))
 	 (symbol-follow? (tok)
 	   (and (eq :character (token-kind tok))
 		(or (and (char<= #\A (token-text tok)) (char>= #\Z (token-text tok)))
 		    (and (char<= #\a (token-text tok)) (char>= #\z (token-text tok)))
 		    (and (char<= #\0 (token-text tok)) (char>= #\9 (token-text tok)))
 		    (char= #\- (token-text tok))
-		    (char= #\/ (token-text tok))
-		    (char= #\: (token-text tok)))))
+		    (char= #\_ (token-text tok)))))
 	 (make-symbol-token ()
 	   (let ((chars (reverse (chars self))))
 	     (let ((str (with-output-to-string (s)
@@ -49,7 +48,7 @@
 		   ((symbol-start? tok)
 		    (setf (line self) (token-line tok))
 		    (setf (start-position self) (token-position tok))
-		    (push (token-text tok) (chars self))
+		    (push (transmogrify (token-text tok)) (chars self))
 		    (setf (state self) :collecting))
 		   (t (push tok output))))
 	    (:collecting
@@ -58,7 +57,7 @@
 		    (push tok output)
 		    (assert (null token-list)))
 		   ((symbol-follow? tok)
-		    (push (token-text tok) (chars self)))
+		    (push (transmogrify (token-text tok)) (chars self)))
 		   (t
 		    (push (make-symbol-token) output)
 		    (push tok output)
@@ -66,4 +65,7 @@
 		    (setf (state self) :idle))))
 	    )))
       (reverse output))))
+
+(defun transmogrify (c)
+  c)
 
