@@ -23,6 +23,7 @@
 		(or (and (char<= #\A (token-text tok)) (char>= #\Z (token-text tok)))
 		    (and (char<= #\a (token-text tok)) (char>= #\z (token-text tok)))
 		    (and (char<= #\0 (token-text tok)) (char>= #\9 (token-text tok)))
+		    (char= #\$ (token-text tok))
 		    (char= #\- (token-text tok))
 		    (char= #\_ (token-text tok)))))
 	 (make-symbol-token ()
